@@ -1,6 +1,5 @@
 /* Can_IOCommon.h: define base address and structure of bxCAN Hw STM32F407VG */
 
-
 #ifndef CAN_IOCOMMON_H
 #define CAN_IOCOMMON_H
 
@@ -52,6 +51,7 @@ typedef struct Can_RxMbx_STag {
   uint32 ulRXDATAHReg;
 } Can_RxMbx;
 
+/* Receive rule register */
 typedef struct Can_Filter_STag {
   uint32 ulFMReg;
   uint32 ulFM1Reg;
@@ -62,7 +62,7 @@ typedef struct Can_Filter_STag {
   uint32 dummy2;
   uint32 ulFA1Reg;
   uint32 dummy3[8];
-  uint32 ulFReg[56];
+  uint32 ulFReg[28][2];
 } Can_Filter;
 
 
