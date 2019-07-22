@@ -44,7 +44,7 @@ typedef struct Can_RxMbx_STag {
   /* ID field value, ID type, frame type - RIxR */
   uint32 ulRXIDReg;
   /* DLC, Filter match index, TimeStamp - RDTxR */
-  uint32 ulRXDLCTSR;
+  uint32 ulRXDLCTSReg;
   /* Receive Data low - RDLxR */
   uint32 ulRXDATALReg;
   /* Receive Data high - RDHxR */
@@ -53,15 +53,25 @@ typedef struct Can_RxMbx_STag {
 
 /* Receive rule register */
 typedef struct Can_Filter_STag {
+  /* Filter mask register */
   uint32 ulFMReg;
+  /* Filter mask register1 */
   uint32 ulFM1Reg;
+  /* dummy address value */
   uint32 dummy0;
+  /* Filter status register */
   uint32 ulFS1Reg;
+  /* dummy address value */
   uint32 dummy1;
+
   uint32 ulFFA1Reg;
+  /* dummy address value */
   uint32 dummy2;
+
   uint32 ulFA1Reg;
+  /* dummy address value */
   uint32 dummy3[8];
+
   uint32 ulFReg[28][2];
 } Can_Filter;
 
@@ -74,7 +84,7 @@ typedef struct Can_Filter_STag {
 #define CAN2_BASEADDR 0x40006800UL
 
 #define Can1_CtrlSts (*(volatile Can_CtrlSts *)(CAN1_BASEADDR + 0UL))
-#define Can1_
+#define Can2_CtrlSts (*(volatile Can_CtrlSts *)(CAN2_BASEADDR + 0UL))
 
 
 

@@ -3,7 +3,7 @@
 void Can_GetVersionInfo( Std_VersionInfoType* versioninfo)
 {
   if (versioninfo == NULL_PTR)
-  {  
+  {
     #ifdef DEV_ERROR_DETECT_API
     (void)Det_ReportError(CAN_MODULE, CAN_ZERO, CAN_GETVERSIONINFO_ID,
       CAN_E_PARAM_POINTER);
@@ -32,3 +32,15 @@ void Can_DeInit( void)
     Can_HwDeInit(Luc_Count);
   }
 }
+
+void Can_SetBaudrate()
+{
+
+}
+
+void Can_SetControllerMode()
+{
+
+}
+
+
