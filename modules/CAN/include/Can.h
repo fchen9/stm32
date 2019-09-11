@@ -55,13 +55,13 @@ Macro definitions
 /*******************************************************************************
 Typedef definitions
 *******************************************************************************/
+/* [ref]: ECUC_Can_00489 */
 typedef struct Can_ConfigType_STag
 {
-  CONSTP2VAR(Can_ControllerPCConfigType, AUTOMATIC, CAN_APPL_DATA)
-    stPCController,
-  P2CONST(Can_ControllerPBConfigType, AUTOMATIC, CAN_APPL_DATA) stPBController,
-  P2CONST(Can_GeneralPBConfigType, AUTOMATIC, CAN_APPL_DATA) stPBGeneral,
-  VAR(uint8, AUTOMATIC) ucNumCanController;
+  const Can_ControllerPCConfigType * const stCanPCController;
+  const Can_ControllerPBConfigType * stCanPBController;
+  const Can_GeneralPCConfigType * const stCanPCGeneral;
+  uint8 ucNumCanController;
 } Can_ConfigType;
 
 
